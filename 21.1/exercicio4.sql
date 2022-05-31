@@ -1,0 +1,1 @@
+select sum(SALARY) as `Pagamento Total dos Salarios` from hr.employees;

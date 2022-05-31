@@ -1,0 +1,1 @@
+select max(SALARY) as `Maior Salario` from hr.employees;

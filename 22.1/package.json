@@ -1,0 +1,21 @@
+{
+  "name": "22.1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "imc": "node ./imc",
+    "velocidade": "node ./vloecidade",
+    "sorteio": "node sorteio",
+    "start": "node index.js"
+  },
+  "author": "luska",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^8.17.0"
+  },
+  "dependencies": {
+    "readline-sync": "^1.4.10"
+  }
+}

@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "imc": "node ./imc",
-    "velocidade": "node ./vloecidade"
+    "velocidade": "node ./vloecidade",
+    "sorteio": "node sorteio"
   },
   "author": "luska",
   "license": "ISC",

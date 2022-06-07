@@ -13,4 +13,4 @@ async function promessa(n1, n2, n3) {
   return result;
 }
 
-promessa(1,200,3).then(response => console.log(response));
+module.exports = { promessa }

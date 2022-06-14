@@ -60,7 +60,7 @@ app.post('/simpsons', (req, res) => {
     .json({ message: 'id already exists' });
 
   simpsons.push(newSimpson);
-  res.status(201).json(simpsons);
+  res.status(204).end();
 })
 
 app.listen(3300, () => {

@@ -36,7 +36,17 @@ app.put('/users/:name/:age', (req, res) => {
 // })
 
 app.get('/simpsons', (_req, res) => {
+  if (!simpsons) return res.status(500).send('error');
   res.status(200).json(simpsons);
+})
+
+app.get('/simpsons/:id', (req, res) => {
+  const { id } = req.params;
+
+  const simpson = simpsons.find((s) => s.id === id);
+
+  if (!simpson) return res.status(404).json({ message: 'simpson not found' });
+  res.status(200).json(simpson);
 })
 
 app.listen(3300, () => {

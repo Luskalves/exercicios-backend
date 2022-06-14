@@ -22,6 +22,12 @@ app.post('/greetings', (req, res) => {
   res.status(201).json({ message: `Hello, ${name}!` })
 })
 
+app.put('/users/:name/:age', (req, res) => {
+  const { name, age } = req.params;
+
+  res.status(201).json({ message: `Seu nome é ${name} e sua idade é ${age}` })
+})
+
 // app.all('*', (req, res) => {
 //   return res.status(404).json({ message: `Invalid ${req.path} route!`})
 // })

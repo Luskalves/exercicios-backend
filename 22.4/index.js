@@ -49,6 +49,20 @@ app.get('/simpsons/:id', (req, res) => {
   res.status(200).json(simpson);
 })
 
+app.post('/simpsons', (req, res) => {
+  const { id, name } = req.body;
+
+  const newSimpson = { id, name };
+  
+  const existSimpson = simpsons.find((s) => s.id === id);
+
+  if (existSimpson) return res.status(409)
+    .json({ message: 'id already exists' });
+
+  simpsons.push(newSimpson);
+  res.status(201).json(simpsons);
+})
+
 app.listen(3300, () => {
   console.log('Ouvindo na porta 3300!')
 })

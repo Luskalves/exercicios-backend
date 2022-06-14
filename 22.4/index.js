@@ -1,6 +1,9 @@
 const express = require('express');
 const bodyParser = require('body-parser')
 const app = express();
+const fs = require('fs');
+
+const simpsons = require('./simpsons.json')
 
 app.use(bodyParser.json());
 
@@ -32,6 +35,10 @@ app.put('/users/:name/:age', (req, res) => {
 //   return res.status(404).json({ message: `Invalid ${req.path} route!`})
 // })
 
+app.get('/simpsons', (_req, res) => {
+  res.status(200).json(simpsons);
+})
+
 app.listen(3300, () => {
-  console.log('sim')
+  console.log('Ouvindo na porta 3300!')
 })

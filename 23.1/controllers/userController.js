@@ -14,6 +14,13 @@ const userController = {
     const listUsers = await userService.listAll();
     if (listUsers.length === 0) return res.status(200).send([]);
     res.status(200).send(listUsers);
+  },
+
+  async getUser(req, res) {
+    const { id } = req.params;
+    const user = await userService.listUser(id);
+  
+    res.status(200).json(user);
   }
 }
 

@@ -1,15 +1,24 @@
 const express = require('express');
-// const 
+const userRouter = require('./routes/userRouter');
+require('express-async-errors');
+
+// docker run --name mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=root1234 -5 mysql:5
 
 const app = express();
 const port = 3000;
 
 app.use(express.json());
 
-app.get('/', (req, res) => {
-  const { name } = req.body;
+app.use('/user', userRouter);
 
-  res.send(`olar ${name}`);
+app.use((err, _req, res, _next) => {
+  const {name, message} = err;
+
+  switch(name) {
+    case 'invalidData': res.status(400).json({ erro: 'true', message}); break;
+  };
 })
 
-app.listen(3002)
+app.listen(port, () => {
+  console.log(`ouvindo na porta ${port}`);
+})

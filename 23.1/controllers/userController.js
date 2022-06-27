@@ -12,6 +12,7 @@ const userController = {
 
   async get(_req, res) {
     const listUsers = await userService.listAll();
+    if (listUsers.length === 0) return res.status(200).send([]);
     res.status(200).send(listUsers);
   }
 }

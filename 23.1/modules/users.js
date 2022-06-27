@@ -17,6 +17,13 @@ const userModule = {
       .execute('SELECT id, first_name, last_name, email FROM registro.users');
   
     return item;
+  },
+
+  async listUser(id) {
+    const query = 'SELECT id, first_name, last_name, email FROM registro.users WHERE id = ?';
+    const [item] = await connection.execute(query, [id]);
+
+    return item;
   }
 }
 

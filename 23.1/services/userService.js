@@ -37,6 +37,10 @@ const userService = {
 
   async listAll() {
     return userModule.listAll();
+  },
+
+  async listUser(id) {
+    return userModule.listUser(id);
   }
 }
 

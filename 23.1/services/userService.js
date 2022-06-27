@@ -33,6 +33,10 @@ const userService = {
     exists(firstName, lastName, email, password);
     const id = await userModule.createUser(firstName, lastName, email, password);
     return id;
+  },
+
+  async listAll() {
+    return userModule.listAll();
   }
 }
 

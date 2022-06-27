@@ -3,9 +3,7 @@ const userController = require('../controllers/userController');
 
 const userRouter = Router();
 
-userRouter.get('/oi', (req, res) => {
-  res.send('oi');
-})
+userRouter.get('/', userController.get)
 
 userRouter.post('/', userController.post);
 

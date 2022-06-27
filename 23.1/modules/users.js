@@ -10,6 +10,13 @@ const userModule = {
 
     const { id } = item;
     return id;
+  },
+
+  async listAll() {
+    const [item] = await connection
+      .execute('SELECT id, first_name, last_name, email FROM registro.users');
+  
+    return item;
   }
 }
 

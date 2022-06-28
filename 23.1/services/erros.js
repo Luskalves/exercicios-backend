@@ -1,6 +1,8 @@
 const throwInvalidUser = (message, name) => {
   const error = new Error(message);
-  error.name = name;
+  if (name) {
+    error.name = name;
+  }
 
   throw error;
 }

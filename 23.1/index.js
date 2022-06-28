@@ -15,6 +15,7 @@ app.use((err, _req, res, _next) => {
   const {name, message} = err;
 
   switch(name) {
+    case null: res.status(400).json({ message });
     case 'invalidData': res.status(400).json({ erro: 'true', message}); break;
   };
 })

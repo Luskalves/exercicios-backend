@@ -26,6 +26,46 @@ function exists(firstName, lastName, email, password){
   }
 }
 
+function existsData(firstName, lastName, email, password){
+  let message = 'error';
+
+  if (!firstName) {
+    message = '"firstName" is required'
+    throwInvalidUser(message, null);
+  }
+  if (firstName.length === 0) {
+    message = '"firstName" is not allowed to be empty'
+    throwInvalidUser(message, null);
+  }
+
+  if (!lastName) {
+    message = '"lastName" is required'
+    throwInvalidUser(message, null);
+  }
+  if (lastName.length === 0) {
+    message = '"lastName" is not allowed to be empty'
+    throwInvalidUser(message, null);
+  }
+
+  if (!email) {
+    message = '"email" is required'
+    throwInvalidUser(message, null);
+  }
+  if (email.length === 0) {
+    message = '"email" is not allowed to be empty'
+    throwInvalidUser(message, null);
+  }
+
+  if (!password) {
+    message = '"password" is required'
+    throwInvalidUser(message, null);
+  }
+  if (password.length === 0) {
+    message = '"password" is not allowed to be empty'
+    throwInvalidUser(message, null);
+  }
+}
+
 const userService = {
  
   async validateUsers(req) {
@@ -41,6 +81,11 @@ const userService = {
 
   async listUser(id) {
     return userModule.listUser(id);
+  },
+
+  async validateData(id, body) {
+    const { firstName, lastName, email, password } = body;
+    existsData(firstName, lastName, email, password);
   }
 }
 

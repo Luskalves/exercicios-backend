@@ -27,42 +27,43 @@ function exists(firstName, lastName, email, password){
 }
 
 function existsData(firstName, lastName, email, password){
+  const errorName = 'invalidDataPut';
   let message = 'error';
 
   if (!firstName) {
     message = '"firstName" is required'
-    throwInvalidUser(message, null);
+    throwInvalidUser(message, errorName);
   }
   if (firstName.length === 0) {
     message = '"firstName" is not allowed to be empty'
-    throwInvalidUser(message, null);
+    throwInvalidUser(message, errorName);
   }
 
   if (!lastName) {
     message = '"lastName" is required'
-    throwInvalidUser(message, null);
+    throwInvalidUser(message, errorName);
   }
   if (lastName.length === 0) {
     message = '"lastName" is not allowed to be empty'
-    throwInvalidUser(message, null);
+    throwInvalidUser(message, errorName);
   }
 
   if (!email) {
     message = '"email" is required'
-    throwInvalidUser(message, null);
+    throwInvalidUser(message, errorName);
   }
   if (email.length === 0) {
     message = '"email" is not allowed to be empty'
-    throwInvalidUser(message, null);
+    throwInvalidUser(message, errorName);
   }
 
   if (!password) {
     message = '"password" is required'
-    throwInvalidUser(message, null);
+    throwInvalidUser(message, errorName);
   }
   if (password.length === 0) {
     message = '"password" is not allowed to be empty'
-    throwInvalidUser(message, null);
+    throwInvalidUser(message, errorName);
   }
 }
 

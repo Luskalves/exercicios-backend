@@ -6,9 +6,9 @@ const userService = {
   async validateToken(token) {
     try {
       const { data } = jwt.verify(token, secret);
-      return data;
+      return [data, null];
     } catch (e) {
-      return undefined;
+      return [undefined, e.message];
     }
   },
 };

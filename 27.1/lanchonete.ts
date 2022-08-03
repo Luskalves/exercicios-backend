@@ -6,7 +6,7 @@ class PessoaCliente {
 }
 
 class Item extends PessoaCliente {
-  private _nomeItem: string;
+  public _nomeItem: string;
   public _preco: number;
 
   constructor(nome: string, nomeItem: string, preco: number) {
@@ -29,11 +29,16 @@ class Pedido extends Item {
     ) {
     super(cliente, item, preco)
     this._pagamento = pagamento;
+    this._nomeItem = item;
     this._desconto = desconto;
-    // this._preco = preco
+    
   }
 
-  PagarPedido(): string {
+  pagarPedido(): string {
+    return `O cliente ${this._nome} deve pagar: R$${this._preco} e vai pagar em ${this._pagamento}`
+  }
+
+  pagarPedidoComDesconto(): string {
     const valorFinal = this._preco - this._preco * (this._desconto / 100)
     return `O cliente ${this._nome} deve pagar: R$${valorFinal} e vai pagar em ${this._pagamento}`
   }
@@ -41,4 +46,5 @@ class Pedido extends Item {
 
 const p1 = new Pedido('luska', 'sandubão', 100, 'dinheiros', 15)
 
-console.log(p1.PagarPedido())
+console.log(p1.pagarPedido())
+console.log(p1.pagarPedidoComDesconto())

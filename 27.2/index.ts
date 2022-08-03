@@ -3,7 +3,7 @@ class Person {
   private _birthDate: Date;
 
   constructor(name: string, date: Date) {
-    if (name.length < 3 || name.length > 120 || !date) {
+    if (name.length < 3 || !date) {
       throw new Error('Metodos inválidos!')
     }
     this._name = name;

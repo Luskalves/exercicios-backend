@@ -1,20 +1,16 @@
 import Person from "./person";
+import { randomBytes } from 'crypto';
 
 export default class Student extends Person {
   public _enrollment: string;
-  private _examsGrades: number[];
-  private _workGrades: number[];
+  private _examsGrades: number[] = [];
+  private _workGrades: number[] = [];
   constructor(
     name: string,
     date: Date,
-    enrolment: string,
-    examsGrades: number[],
-    workGrades: number[],
   ) {
     super(name, date);
-    this._enrollment = enrolment;
-    this._examsGrades = examsGrades;
-    this._workGrades = workGrades
+    this._enrollment = '';
   }
 
   get getEnrollment(): string {
@@ -29,7 +25,8 @@ export default class Student extends Person {
     return this._examsGrades;
   }
 
-  set setExamGradews(examsGrades: number[]) {
+  set setExamGrades(examsGrades: number[]) {
+    if (examsGrades.length > 4) throw new Error('Máximo de 4 notas');
     this._examsGrades = examsGrades;
   }
 
@@ -38,6 +35,27 @@ export default class Student extends Person {
   }
 
   set setWorkGrades(workGrades: number[]) {
+    if (workGrades.length > 2) throw new Error('Máximo de 2 notas');
     this._workGrades = workGrades;
+  }
+
+  sumGrades(): number {
+    let nota = 0;
+    this._examsGrades.forEach((grade) => nota += grade);
+
+    return nota;
+  }
+
+  sumAverageGrade(): number {
+    const notas = this.sumGrades();
+    const media = notas / this._examsGrades.length
+    return media;
+  }
+
+  generateEnrollment(): any {
+    const enrolment = randomBytes(8).toString('hex');
+    if (enrolment.length > 16) throw new Error('Tamanho inválido');
+    this._enrollment = enrolment;
+    return enrolment;
   }
 }

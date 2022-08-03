@@ -16,7 +16,7 @@ class Item extends PessoaCliente {
   }
 }
 
-class Pedido extends Item {
+export default class Pedido extends Item {
   private _pagamento: string;
   private _desconto: number;
 

@@ -1,4 +1,4 @@
-import PersonInterface from '../interfaces/interfacePerson';
+import PersonInterface from '../../interfaces/interfacePerson';
 
 export default class Person implements PersonInterface {
   private _name: string;

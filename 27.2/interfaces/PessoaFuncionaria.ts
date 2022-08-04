@@ -1,4 +1,4 @@
-export default interface PessoaFuncionaria {
+export default interface Employee {
   registration: string;
   salary: number;
   admissionDate: Date;

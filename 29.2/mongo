@@ -28,6 +28,12 @@ use('supers')
 
 // exercício 5
 
-db.superheroes.findOne({
-  "aspects.height": { $gte: 200 }
+// db.superheroes.findOne({
+//   "aspects.height": { $gte: 200 }
+// })
+
+// exercício 6
+
+db.superheroes.find ({
+  "aspects.eyeColor": { $eq: "blue" }
 })

@@ -7,3 +7,9 @@ use('supers')
 // exercício 1
 
 // db.superheroes.find()
+
+// exercício 2
+
+db.superheroes.find({
+  "aspects.height": { $lt: 180 }  
+})

@@ -10,6 +10,12 @@ use('supers')
 
 // exercício 2
 
-db.superheroes.find({
+// db.superheroes.find({
+//   "aspects.height": { $lt: 180 }  
+// })
+
+// exercício 3
+
+db.superheroes.countDocuments({
   "aspects.height": { $lt: 180 }  
 })

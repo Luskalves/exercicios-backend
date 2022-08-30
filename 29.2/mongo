@@ -52,7 +52,13 @@ use('supers')
 
 // exercicio 9 
 
-db.superheroes.find({
+// db.superheroes.find({
+//   "aspects.hairColor": { $in: ["Black", "No Hair"] }
+// })
+
+
+// exercício 10 
+
+db.superheroes.countDocuments({
   "aspects.hairColor": { $in: ["Black", "No Hair"] }
 })
-

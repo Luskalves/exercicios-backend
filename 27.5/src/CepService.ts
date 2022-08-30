@@ -7,8 +7,8 @@ interface cep {
 export default class CepService implements cep {
   private readonly _cepApi: FooCepAPI;
 
-  constructor(cepApi: FooCepAPI) {
-    this._cepApi = cepApi;
+  constructor() {
+    this._cepApi = new FooCepAPI();
   }
 
   get cepApi(): FooCepAPI {

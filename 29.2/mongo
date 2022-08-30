@@ -34,6 +34,12 @@ use('supers')
 
 // exercício 6
 
-db.superheroes.find ({
+// db.superheroes.find({
+//   "aspects.eyeColor": { $eq: "blue" }
+// })
+
+// exercício 7 
+
+db.superheroes.countDocuments({
   "aspects.eyeColor": { $eq: "blue" }
 })

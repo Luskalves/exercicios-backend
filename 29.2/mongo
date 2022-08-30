@@ -1,0 +1,9 @@
+use('supers')
+
+// teste
+// use('supers')
+// db.superheroes.countDocuments()
+
+// exercício 1
+
+// db.superheroes.find()

@@ -117,6 +117,18 @@ use('supers')
 
 // exercício 17
 
-db.superheroes.deleteOne({
-  "publisher": "Sony Pictures"
+// db.superheroes.countDocuments({
+//   "race": { $exists: true }
+// })
+
+// exercício 18
+
+// db.superheroes.deleteOne({
+//   "publisher": "Sony Pictures"
+// })
+
+// exercício 19
+
+db.superheroes.deleteMany({
+  "publisher": "George Lucas"
 })

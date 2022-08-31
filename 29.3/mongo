@@ -11,11 +11,20 @@ use('cinema')
 
 // exercício 2 
 
-db.movies.find({
-  category: {
-    $all: ["action", "adventure"],
-  },
-  imdbRating: {
-    $gt: 7,
-  }
-})
+// db.movies.find({
+//   category: {
+//     $all: ["action", "adventure"],
+//   },
+//   imdbRating: {
+//     $gt: 7,
+//   }
+// })
+
+
+// exercício 3 
+
+// db.movies.find({
+//   ratings: {
+//     $gt: 103
+//   }
+// }, { _id: false, title: true, ratings: true })

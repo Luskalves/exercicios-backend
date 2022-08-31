@@ -74,6 +74,19 @@ use('supers')
 
 // exercício 12 
 
-db.superheroes.countDocuments({
-  "aspects.height": { $not: { $gt: 180 } }
+// db.superheroes.countDocuments({
+//   "aspects.height": { $not: { $gt: 180 } }
+// })
+
+//exercício 13 
+
+db.superheroes.find({
+  $nor: [
+    {
+      "race": "human",
+    },
+    {
+      "aspects.height": { $gt: 180 }
+    }
+  ]
 })

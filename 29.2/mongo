@@ -118,7 +118,7 @@ use('supers')
 // exercício 17
 
 // db.superheroes.countDocuments({
-//   "race": { $exists: true }
+//   "aspects.hairColor": { $exists: true }
 // })
 
 // exercício 18

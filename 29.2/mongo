@@ -66,8 +66,14 @@ use('supers')
 
 // exercício 11
 
+// db.superheroes.countDocuments({
+//    "aspects.hairColor": {
+//       $nin: ["Black", "No Hair"]
+//     }
+// })
+
+// exercício 12 
+
 db.superheroes.countDocuments({
-   "aspects.hairColor": {
-      $nin: ["Black", "No Hair"]
-    }
+  "aspects.height": { $not: { $gt: 180 } }
 })

@@ -93,7 +93,18 @@ use('supers')
 
 // exercício 14
 
+// db.superheroes.find({
+//   "publisher": "Marvel Comics",
+//   "aspects.height": { $in: [180, 200] }
+// })
+
+// exercício 15
+
 db.superheroes.find({
-  "publisher": "Marvel Comics",
-  "aspects.height": { $in: [180, 200] }
+  $and: [
+    {"aspects.weight": { $gt: 80 }},
+    {"aspects.weight": { $lt: 100 }},
+    {"race": { $in: ["Human", "Mutant"] }},
+    {"publisher": { $not: { $eq: "DC Comics" } }}
+  ]
 })

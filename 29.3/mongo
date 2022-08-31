@@ -2,8 +2,20 @@ use('cinema')
 
 // exercício 1
 
+// db.movies.find({
+//   category: {
+//     $all: ["action", "adventure"]
+//   }
+// })
+
+
+// exercício 2 
+
 db.movies.find({
   category: {
-    $all: ["action", "adventure"]
+    $all: ["action", "adventure"],
+  },
+  imdbRating: {
+    $gt: 7,
   }
 })

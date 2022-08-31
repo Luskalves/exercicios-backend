@@ -1,0 +1,9 @@
+use('cinema')
+
+// exercício 1
+
+db.movies.find({
+  category: {
+    $all: ["action", "adventure"]
+  }
+})

@@ -80,13 +80,20 @@ use('supers')
 
 //exercício 13 
 
+// db.superheroes.find({
+//   $nor: [
+//     {
+//       "race": "human",
+//     },
+//     {
+//       "aspects.height": { $gt: 180 }
+//     }
+//   ]
+// })
+
+// exercício 14
+
 db.superheroes.find({
-  $nor: [
-    {
-      "race": "human",
-    },
-    {
-      "aspects.height": { $gt: 180 }
-    }
-  ]
+  "publisher": "Marvel Comics",
+  "aspects.height": { $in: [180, 200] }
 })

@@ -31,9 +31,22 @@ use('cinema')
 
 // exercício 4
 
+// db.movies.find({
+//   ratings: {
+//     $gt: 100,
+//     $lt: 105,
+//   }
+// }, { _id: false, title: true, ratings: true })
+
+// exercício 5
+
 db.movies.find({
   ratings: {
-    $gt: 100,
-    $lt: 105,
+    $gt: 64,
+    $lt: 105
+  },
+
+  ratings: {
+    $mod: [9, 0]
   }
 }, { _id: false, title: true, ratings: true })

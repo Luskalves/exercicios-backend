@@ -150,8 +150,16 @@ use('cinema')
 
 // exercício 12
 
+// db.movies.find({
+//   description: {
+//     $regex: /^The/i
+//   }
+// })
+
+// exercício 13
+
 db.movies.find({
   description: {
-    $regex: /^The/i
+    $regex: /umanity.$/i
   }
 })

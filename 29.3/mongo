@@ -52,18 +52,26 @@ use('cinema')
 
 // exercício 6 
 
+// db.movies.find({
+//   category: {
+//     $elemMatch: { $in: ["adventure"] }
+//   },
+
+//   ratings: {
+//     $elemMatch: {
+//       $gt: 103
+//     }
+//   }
+// }, {
+//   _id: false,
+//   title: true,
+//   category: true
+// })
+
+// exercício 7 
+
 db.movies.find({
   category: {
-    $elemMatch: { $in: ["adventure"] }
-  },
-
-  ratings: {
-    $elemMatch: {
-      $gt: 103
-    }
+    $size: 2
   }
-}, {
-  _id: false,
-  title: true,
-  category: true
 })

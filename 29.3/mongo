@@ -86,12 +86,39 @@ use('cinema')
 
 // exercício 9
 
-db.movies.find({
-  budget: {
-    $mod: [5, 0]
-  },
+// db.movies.find({
+//   budget: {
+//     $mod: [5, 0]
+//   },
 
-  category: {
-    $size: 2
-  }
+//   category: {
+//     $size: 2
+//   }
+// })
+
+// exercício 10
+
+db.movies.find({
+  $or: [
+    {
+      category: {
+        $elemMatch: {
+          $in: ["sci-fi"]
+        }
+      }
+    },
+
+    {
+      ratings: {
+        $elemMatch: {
+          $gt: 199
+        }
+      }
+    }
+  ]
+}, {
+  _id: false,
+  tittle: true,
+  ratings: true,
+  category: true
 })

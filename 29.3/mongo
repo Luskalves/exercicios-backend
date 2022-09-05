@@ -98,27 +98,52 @@ use('cinema')
 
 // exercício 10
 
+// db.movies.find({
+//   $or: [
+//     {
+//       category: {
+//         $elemMatch: {
+//           $in: ["sci-fi"]
+//         }
+//       }
+//     },
+
+//     {
+//       ratings: {
+//         $elemMatch: {
+//           $gt: 199
+//         }
+//       }
+//     }
+//   ]
+// }, {
+//   _id: false,
+//   tittle: true,
+//   ratings: true,
+//   category: true
+// })
+
+// exercício 11
+
 db.movies.find({
   $or: [
     {
       category: {
-        $elemMatch: {
-          $in: ["sci-fi"]
-        }
+        $elemMatch: { $in: ["adventure"] }
       }
     },
-
     {
-      ratings: {
-        $elemMatch: {
-          $gt: 199
-        }
+      category: {
+        $elemMatch: { $in: ["family"] }
       }
     }
-  ]
-}, {
-  _id: false,
-  tittle: true,
-  ratings: true,
-  category: true
+  ],
+
+  ratings: {
+    $size: 4
+  },
+
+  imdbRating: {
+    $gte: 7
+  }
 })

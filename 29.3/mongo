@@ -78,8 +78,20 @@ use('cinema')
 
 // exercício 8
 
+// db.movies.find({
+//   ratings: {
+//     $size: 4
+//   }
+// }, { _id: false, title: true, ratings: true})
+
+// exercício 9
+
 db.movies.find({
-  ratings: {
-    $size: 4
+  budget: {
+    $mod: [5, 0]
+  },
+
+  category: {
+    $size: 2
   }
-}, { _id: false, title: true, ratings: true})
+})

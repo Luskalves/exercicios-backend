@@ -125,25 +125,33 @@ use('cinema')
 
 // exercício 11
 
+// db.movies.find({
+//   $or: [
+//     {
+//       category: {
+//         $elemMatch: { $in: ["adventure"] }
+//       }
+//     },
+//     {
+//       category: {
+//         $elemMatch: { $in: ["family"] }
+//       }
+//     }
+//   ],
+
+//   ratings: {
+//     $size: 4
+//   },
+
+//   imdbRating: {
+//     $gte: 7
+//   }
+// })
+
+// exercício 12
+
 db.movies.find({
-  $or: [
-    {
-      category: {
-        $elemMatch: { $in: ["adventure"] }
-      }
-    },
-    {
-      category: {
-        $elemMatch: { $in: ["family"] }
-      }
-    }
-  ],
-
-  ratings: {
-    $size: 4
-  },
-
-  imdbRating: {
-    $gte: 7
+  description: {
+    $regex: /^The/i
   }
 })

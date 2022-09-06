@@ -2,13 +2,19 @@ use('cinema');
 
 // exercício 1
 
-db.movies.updateOne(
-  { 
-    title: "Batman",
-    imdbRating: { $ne: 7.7 }
-  },
-  { $set: { imdbRating: 7.7 } }
-)
-db.movies.find(
-  { title: "Batman" }
-)
+// db.movies.updateOne(
+//   { 
+//     title: "Batman",
+//     imdbRating: { $ne: 7.7 }
+//   },
+//   { $set: { imdbRating: 7.7 } }
+// )
+// db.movies.find(
+//   { title: "Batman" }
+// )
+
+// exercício 2
+
+db.movies.find({
+  title: "Godzilla"
+})

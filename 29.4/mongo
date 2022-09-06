@@ -49,15 +49,30 @@ use('cinema');
 
 // exercício 4
 
-db.movies.updateMany(
-  { title: "Batman" },
-  { 
+// db.movies.updateMany(
+//   { title: "Batman" },
+//   { 
+//     $inc: {
+//       imdbRating: 2
+//     }
+//   }
+// )
+
+// db.movies.find({
+//   title: "Batman"
+// })
+
+// exercício 5
+
+db.movies.updateOne(
+  { title: "Home Alone" },
+  {
     $inc: {
-      imdbRating: 2
+      budget: 5
     }
   }
 )
 
 db.movies.find({
-  title: "Batman"
+  title: "Home Alone"
 })

@@ -45,3 +45,19 @@ use('cinema');
 // db.movies.find({
 //   title: "Home Alone"
 // })
+
+
+// exercício 4
+
+db.movies.updateMany(
+  { title: "Batman" },
+  { 
+    $inc: {
+      imdbRating: 2
+    }
+  }
+)
+
+db.movies.find({
+  title: "Batman"
+})

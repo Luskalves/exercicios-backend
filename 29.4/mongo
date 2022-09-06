@@ -15,6 +15,33 @@ use('cinema');
 
 // exercício 2
 
-db.movies.find({
-  title: "Godzilla"
-})
+// db.movies.updateMany(
+//   {
+//     title: "Godzilla",
+//   },
+//   {
+//     $set: {
+//       budget: 1
+//     }
+//   }
+// )
+
+// db.movies.find({
+//   title: "Godzilla"
+// })
+
+// exercício 3
+
+// db.movies.updateMany(
+//   { title: "Home Alone" },
+//   {
+//     $set: {
+//       budget: 15,
+//       imdbRating: 5.5,
+//     }
+//   }
+// )
+
+// db.movies.find({
+//   title: "Home Alone"
+// })

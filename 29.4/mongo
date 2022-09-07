@@ -240,7 +240,12 @@ use('class')
 
 // exercício 16
 db.xmen.updateMany(
-  { class: "omega" },
+  { 
+    $or: [
+      { class: "omega" },
+      { class: "gama" }
+    ]
+  },
   {
     $set: {
       power: 500

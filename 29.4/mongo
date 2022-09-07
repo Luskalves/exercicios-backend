@@ -239,17 +239,29 @@ use('class')
 
 
 // exercício 16
+
+// db.xmen.updateMany(
+//   { $or: [
+//     { class: "omega" },
+//     { class: "gama" }
+//   ] },
+//   {
+//     $set: {
+//       power: 500
+//     }
+//   }
+// )
+// db.xmen.find()
+
+// exercício 17
+
 db.xmen.updateMany(
-  { 
-    $or: [
-      { class: "omega" },
-      { class: "gama" }
-    ]
-  },
+  { class: "gama" },
   {
-    $set: {
-      power: 500
+    $min: {
+      power: 300
     }
   }
 )
-db.xmen.find()
+
+db.xmen.find({})

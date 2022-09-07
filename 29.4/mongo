@@ -268,17 +268,50 @@ use('class')
 
 // exercício 18
 
+// db.xmen.updateMany(
+//   { class: { $exists: false } },
+//   {
+//     $inc: {
+//       power: -100
+//     }
+//   }
+// ) 
+
+// db.xmen.find({
+//   class: {
+//     $exists: false
+//   }
+// })
+
+// exercício 19
+
 db.xmen.updateMany(
-  { class: { $exists: false } },
   {
-    $inc: {
-      power: -100
+    $or: [
+      { 
+        "occupation": "Junior Staff",
+        power: {
+          $gte: 200
+        }
+      },
+      { 
+        "occupation": "Senior Staff",
+        power: {
+          $gte: 100
+        }
+      }
+    ]
+  },
+  {
+    $set: {
+      areas: ["Students Room"]
     }
   }
-) 
+)
 
 db.xmen.find({
-  class: {
-    $exists: false
-  }
+  $or: [
+    { "occupation": "Junior Staff" },
+    { "occupation": "Senior Staff", }
+  ]
 })

@@ -92,15 +92,32 @@ use('cinema');
 //   title: "Batman"
 // })
 
+// exercício 7
+
+// db.movies.updateMany(
+//   { title: "Batman" },
+//   {
+//     $rename: {
+//       "budget": "estimatedBudget"
+//     }
+//   }
+// )
+
+// db.movies.find({
+//   title: "Batman"
+// })
+
+// exercício 8
+
 db.movies.updateMany(
-  { title: "Batman" },
+  { title: "Home Alone" },
   {
-    $rename: {
-      "budget": "estimatedBudget"
+    $min: {
+      "budget": 5
     }
   }
 )
 
 db.movies.find({
-  title: "Batman"
+  title: "Home Alone"
 })

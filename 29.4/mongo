@@ -124,18 +124,33 @@ use('cinema');
 
 // exercício 9
 
+// db.movies.updateMany(
+//   { title: "Godzilla" },
+//   {
+//     $max: {
+//       imdbRating: 8.6
+//     },
+//     $set: {
+//       "category.1": "thriller"
+//     }
+//   }
+// )
+
+// db.movies.find({
+//   title: "Godzilla"
+// })
+
+// exercício 10
+
 db.movies.updateMany(
-  { title: "Godzilla" },
+  { title: "Home Alone" },
   {
-    $max: {
-      imdbRating: 8.6
-    },
-    $set: {
-      "category.1": "thriller"
+    $currentDate: {
+      lastUpdates: { $type: "timestamp"}
     }
   }
 )
 
 db.movies.find({
-  title: "Godzilla"
+  title: "Home Alone"
 })

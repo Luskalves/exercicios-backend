@@ -255,13 +255,30 @@ use('class')
 
 // exercício 17
 
+// db.xmen.updateMany(
+//   { class: "gama" },
+//   {
+//     $min: {
+//       power: 300
+//     }
+//   }
+// )
+
+// db.xmen.find({})
+
+// exercício 18
+
 db.xmen.updateMany(
-  { class: "gama" },
+  { class: { $exists: false } },
   {
-    $min: {
-      power: 300
+    $inc: {
+      power: -100
     }
   }
-)
+) 
 
-db.xmen.find({})
+db.xmen.find({
+  class: {
+    $exists: false
+  }
+})

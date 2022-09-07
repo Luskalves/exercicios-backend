@@ -170,14 +170,36 @@ use('cinema');
 
 // exercício 12
 
+// db.movies.updateMany(
+//   {},
+//   {
+//     $unset: {
+//       "budget": "",
+//       "estimatedBudget": ""
+//     }
+//   }
+// )
+
+// db.movies.find({})
+
 db.movies.updateMany(
-  {},
+  { 
+    $or: [
+      { title: "Batman" },
+      { title: "Home Alone" }
+    ]
+  },
+
   {
-    $unset: {
-      "budget": "",
-      "estimatedBudget": ""
+    $max: {
+      imdbRating: 17
     }
   }
 )
 
-db.movies.find({})
+db.movies.find({
+  $or: [
+    { title: "Batman" },
+    { title: "Home Alone" }
+  ]
+})

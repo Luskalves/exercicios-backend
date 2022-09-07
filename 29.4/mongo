@@ -1,0 +1,338 @@
+// use('cinema');
+use('class')
+
+// exercício 1
+
+// db.movies.updateOne(
+//   { 
+//     title: "Batman",
+//     imdbRating: { $ne: 7.7 }
+//   },
+//   { $set: { imdbRating: 7.7 } }
+// )
+// db.movies.find(
+//   { title: "Batman" }
+// )
+
+// exercício 2
+
+// db.movies.updateMany(
+//   {
+//     title: "Godzilla",
+//   },
+//   {
+//     $set: {
+//       budget: 1
+//     }
+//   }
+// )
+
+// db.movies.find({
+//   title: "Godzilla"
+// })
+
+// exercício 3
+
+// db.movies.updateMany(
+//   { title: "Home Alone" },
+//   {
+//     $set: {
+//       budget: 15,
+//       imdbRating: 5.5,
+//     }
+//   }
+// )
+
+// db.movies.find({
+//   title: "Home Alone"
+// })
+
+
+// exercício 4
+
+// db.movies.updateMany(
+//   { title: "Batman" },
+//   { 
+//     $inc: {
+//       imdbRating: 2
+//     }
+//   }
+// )
+
+// db.movies.find({
+//   title: "Batman"
+// })
+
+// exercício 5
+
+// db.movies.updateOne(
+//   { title: "Home Alone" },
+//   {
+//     $inc: {
+//       budget: 5
+//     }
+//   }
+// )
+
+// db.movies.find({
+//   title: "Home Alone"
+// })
+
+// exercício 6
+
+// db.movies.updateOne(
+//   { title: "Batman" },
+//   {
+//     $mul: {
+//       imdbRating: 4
+//     }
+//   }
+// )
+
+// db.movies.find({
+//   title: "Batman"
+// })
+
+// exercício 7
+
+// db.movies.updateMany(
+//   { title: "Batman" },
+//   {
+//     $rename: {
+//       "budget": "estimatedBudget"
+//     }
+//   }
+// )
+
+// db.movies.find({
+//   title: "Batman"
+// })
+
+// exercício 8
+
+// db.movies.updateMany(
+//   { title: "Home Alone" },
+//   {
+//     $min: {
+//       "budget": 5
+//     }
+//   }
+// )
+
+// db.movies.find({
+//   title: "Home Alone"
+// })
+
+// exercício 9
+
+// db.movies.updateMany(
+//   { title: "Godzilla" },
+//   {
+//     $max: {
+//       imdbRating: 8.6
+//     },
+//     $set: {
+//       "category.1": "thriller"
+//     }
+//   }
+// )
+
+// db.movies.find({
+//   title: "Godzilla"
+// })
+
+// exercício 10
+
+// db.movies.updateMany(
+//   { title: "Home Alone" },
+//   {
+//     $currentDate: {
+//       lastUpdates: { $type: "timestamp"}
+//     }
+//   }
+// )
+
+// db.movies.find({
+//   title: "Home Alone"
+// })
+
+// exercício 11
+
+// db.movies.updateMany(
+//   {},
+//   {
+//     $set: {
+//       "sequels": 0
+//     }
+//   }
+// )
+
+// db.movies.find({})
+
+// exercício 12
+
+// db.movies.updateMany(
+//   {},
+//   {
+//     $unset: {
+//       "budget": "",
+//       "estimatedBudget": ""
+//     }
+//   }
+// )
+
+// db.movies.find({})
+
+// db.movies.updateMany(
+//   { 
+//     $or: [
+//       { title: "Batman" },
+//       { title: "Home Alone" }
+//     ]
+//   },
+
+//   {
+//     $max: {
+//       imdbRating: 17
+//     }
+//   }
+// )
+
+// db.movies.find({
+//   $or: [
+//     { title: "Batman" },
+//     { title: "Home Alone" }
+//   ]
+// })
+
+// exercício 14
+
+// db.xmen.updateMany(
+//   {
+//     class: "unknown"
+//   }, 
+//   {
+//     $unset: {
+//       class: ""
+//     }
+//   }
+// )
+
+// db.xmen.find()
+
+// exercício 15
+
+// db.xmen.updateMany(
+//   {},
+//   {
+//     $rename: {
+//       hero_namee: "hero_name",
+//       full_namee: "full_name"
+//     },
+
+//     $set: {
+//       power: 100
+//     }
+//   }
+// )
+// db.xmen.find()
+
+
+// exercício 16
+
+// db.xmen.updateMany(
+//   { $or: [
+//     { class: "omega" },
+//     { class: "gama" }
+//   ] },
+//   {
+//     $set: {
+//       power: 500
+//     }
+//   }
+// )
+// db.xmen.find()
+
+// exercício 17
+
+// db.xmen.updateMany(
+//   { class: "gama" },
+//   {
+//     $min: {
+//       power: 300
+//     }
+//   }
+// )
+
+// db.xmen.find({})
+
+// exercício 18
+
+// db.xmen.updateMany(
+//   { class: { $exists: false } },
+//   {
+//     $inc: {
+//       power: -100
+//     }
+//   }
+// ) 
+
+// db.xmen.find({
+//   class: {
+//     $exists: false
+//   }
+// })
+
+// exercício 19
+
+// db.xmen.updateMany(
+//   {
+//     $or: [
+//       { 
+//         "occupation": "Junior Staff",
+//         power: {
+//           $gte: 200
+//         }
+//       },
+//       { 
+//         "occupation": "Senior Staff",
+//         power: {
+//           $gte: 100
+//         }
+//       }
+//     ]
+//   },
+//   {
+//     $set: {
+//       areas: ["Students Room"]
+//     }
+//   }
+// )
+
+// db.xmen.find({
+//   $or: [
+//     { "occupation": "Junior Staff" },
+//     { "occupation": "Senior Staff", }
+//   ]
+// })
+
+// exercício 20
+
+db.xmen.updateMany(
+  {
+    areas: {
+      $exists: false
+    }
+  },
+  {
+    $set: {
+      areas: ["Outside"]
+    }
+  }
+)
+
+db.xmen.find(
+  {
+    areas: ["Outside"]
+  }
+)

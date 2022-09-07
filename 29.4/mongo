@@ -285,33 +285,54 @@ use('class')
 
 // exercício 19
 
+// db.xmen.updateMany(
+//   {
+//     $or: [
+//       { 
+//         "occupation": "Junior Staff",
+//         power: {
+//           $gte: 200
+//         }
+//       },
+//       { 
+//         "occupation": "Senior Staff",
+//         power: {
+//           $gte: 100
+//         }
+//       }
+//     ]
+//   },
+//   {
+//     $set: {
+//       areas: ["Students Room"]
+//     }
+//   }
+// )
+
+// db.xmen.find({
+//   $or: [
+//     { "occupation": "Junior Staff" },
+//     { "occupation": "Senior Staff", }
+//   ]
+// })
+
+// exercício 20
+
 db.xmen.updateMany(
   {
-    $or: [
-      { 
-        "occupation": "Junior Staff",
-        power: {
-          $gte: 200
-        }
-      },
-      { 
-        "occupation": "Senior Staff",
-        power: {
-          $gte: 100
-        }
-      }
-    ]
+    areas: {
+      $exists: false
+    }
   },
   {
     $set: {
-      areas: ["Students Room"]
+      areas: ["Outside"]
     }
   }
 )
 
-db.xmen.find({
-  $or: [
-    { "occupation": "Junior Staff" },
-    { "occupation": "Senior Staff", }
-  ]
-})
+db.xmen.find(
+  {
+    areas: ["Outside"]
+  }
+)

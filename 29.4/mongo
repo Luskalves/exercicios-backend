@@ -204,3 +204,31 @@ use('class')
 //     { title: "Home Alone" }
 //   ]
 // })
+
+// exercício 14
+
+// db.xmen.updateMany(
+//   {
+//     class: "unknown"
+//   }, 
+//   {
+//     $unset: {
+//       class: ""
+//     }
+//   }
+// )
+
+// db.xmen.find()
+
+// exercício 15
+
+db.xmen.updateMany(
+  {},
+  {
+    $rename: {
+      name: "hero_name",
+      true_name: "full_name"
+    }
+  }
+)
+db.xmen.find()

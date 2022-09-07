@@ -226,9 +226,17 @@ db.xmen.updateMany(
   {},
   {
     $rename: {
-      name: "hero_name",
-      true_name: "full_name"
+      hero_namee: "hero_name",
+      full_namee: "full_name"
+    },
+
+    $set: {
+      power: 100
     }
   }
 )
 db.xmen.find()
+
+
+// exercício 16
+

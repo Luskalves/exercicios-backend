@@ -222,21 +222,29 @@ use('class')
 
 // exercício 15
 
-db.xmen.updateMany(
-  {},
-  {
-    $rename: {
-      hero_namee: "hero_name",
-      full_namee: "full_name"
-    },
+// db.xmen.updateMany(
+//   {},
+//   {
+//     $rename: {
+//       hero_namee: "hero_name",
+//       full_namee: "full_name"
+//     },
 
+//     $set: {
+//       power: 100
+//     }
+//   }
+// )
+// db.xmen.find()
+
+
+// exercício 16
+db.xmen.updateMany(
+  { class: "omega" },
+  {
     $set: {
-      power: 100
+      power: 500
     }
   }
 )
 db.xmen.find()
-
-
-// exercício 16
-

@@ -154,3 +154,30 @@ use('cinema');
 // db.movies.find({
 //   title: "Home Alone"
 // })
+
+// exercício 11
+
+// db.movies.updateMany(
+//   {},
+//   {
+//     $set: {
+//       "sequels": 0
+//     }
+//   }
+// )
+
+// db.movies.find({})
+
+// exercício 12
+
+db.movies.updateMany(
+  {},
+  {
+    $unset: {
+      "budget": "",
+      "estimatedBudget": ""
+    }
+  }
+)
+
+db.movies.find({})

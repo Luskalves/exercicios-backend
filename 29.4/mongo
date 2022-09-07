@@ -142,15 +142,15 @@ use('cinema');
 
 // exercício 10
 
-db.movies.updateMany(
-  { title: "Home Alone" },
-  {
-    $currentDate: {
-      lastUpdates: { $type: "timestamp"}
-    }
-  }
-)
+// db.movies.updateMany(
+//   { title: "Home Alone" },
+//   {
+//     $currentDate: {
+//       lastUpdates: { $type: "timestamp"}
+//     }
+//   }
+// )
 
-db.movies.find({
-  title: "Home Alone"
-})
+// db.movies.find({
+//   title: "Home Alone"
+// })
